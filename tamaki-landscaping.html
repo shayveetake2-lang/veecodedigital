@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17362b">
+  <meta name="description" content="Tamaki Landscaping & Design creates premium outdoor spaces, paving, planting and garden maintenance across Central and East Auckland.">
+  <meta name="keywords" content="landscaping Auckland, garden design Auckland, paving Central Auckland, garden maintenance East Auckland">
+  <meta property="og:title" content="Tamaki Landscaping & Design | Auckland Outdoor Spaces">
+  <meta property="og:description" content="Premium landscape design, paving, and garden maintenance across Central & East Auckland.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_NZ">
+  <meta property="og:url" content="https://veecodedigital.online/tamaki-landscaping.html">
+  <title>Tamaki Landscaping & Design | Auckland Outdoor Spaces</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { forest: '#17362b', leaf: '#567c5d', slate: '#27343a', mist: '#f2f4ef', stone: '#dce4da' }, fontFamily: { display: ['Plus Jakarta Sans', 'sans-serif'], serif: ['DM Serif Display', 'serif'], mono: ['DM Mono', 'monospace'] } } } };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --forest:#17362b; --leaf:#567c5d; --slate:#27343a; --mist:#f2f4ef; --stone:#dce4da; --line:#cad5ca; --muted:#68776d; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--mist); color: var(--forest); font-family: 'Plus Jakarta Sans', sans-serif; }
+    body:before { content:''; position:fixed; inset:0; pointer-events:none; z-index:20; opacity:.035; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .wrap { width:min(1140px,calc(100% - 40px)); margin-inline:auto; }
+    .serif { font-family:'DM Serif Display',Georgia,serif; }
+    .mono { font-family:'DM Mono',monospace; }
+    .eyebrow { color:var(--leaf); font:10px 'DM Mono',monospace; letter-spacing:1.3px; text-transform:uppercase; }
+    .header { border-bottom:1px solid var(--line); background:rgba(242,244,239,.92); backdrop-filter:blur(12px); }
+    .logo { color:var(--forest); font-size:16px; font-weight:700; text-decoration:none; letter-spacing:-.03em; }
+    .logo-mark { display:inline-grid; place-items:center; width:27px; height:27px; margin-right:9px; border-radius:50%; background:var(--forest); color:#d7e9d5; font:13px 'DM Serif Display',serif; }
+    .nav-link { color:var(--forest); font:10px 'DM Mono',monospace; letter-spacing:.7px; text-decoration:none; text-transform:uppercase; }
+    .nav-link:hover,.nav-link.active { color:var(--leaf); }
+    .hero { background:var(--forest); color:#edf5e9; }
+    .hero-title { font-size:clamp(3.3rem,8vw,7.2rem); line-height:.91; letter-spacing:-.065em; }
+    .hero-title em,.section-title em { color:#bad7ae; font-style:italic; }
+    .hero-image { min-height:510px; position:relative; overflow:hidden; background:linear-gradient(135deg,rgba(18,49,37,.2),rgba(18,49,37,.65)),url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1400&q=85') center/cover; }
+    .hero-image:after { content:'DESIGN · BUILD · MAINTAIN'; position:absolute; bottom:22px; left:24px; color:#e4f0dd; font:10px 'DM Mono',monospace; letter-spacing:1.2px; }
+    .hero-badge { position:absolute; right:22px; top:22px; z-index:1; width:100px; height:100px; display:grid; place-items:center; border:1px solid #d8ebd0; border-radius:50%; color:#e3f1dc; font:9px/1.4 'DM Mono',monospace; text-align:center; transform:rotate(12deg); }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:14px; min-height:49px; padding:14px 20px; background:#b6d59f; color:var(--forest); font:10px 'DM Mono',monospace; letter-spacing:.5px; text-decoration:none; text-transform:uppercase; transition:transform .2s,background .2s; }
+    .button:hover { background:#d4ecc3; transform:translateY(-2px); }
+    .outline-button { border:1px solid #b6d59f; color:#dcefd4; background:transparent; }
+    .outline-button:hover { background:#b6d59f; color:var(--forest); }
+    .feature-card { background:white; border:1px solid var(--line); }
+    .feature-card:hover { border-color:var(--leaf); }
+    .service-card { background:white; border-top:3px solid var(--leaf); }
+    .service-card ul { color:var(--muted); font:11px/2 'DM Mono',monospace; list-style:none; padding:0; }
+    .service-card li:before { content:'+'; color:var(--leaf); margin-right:9px; }
+    .about-block { background:var(--forest); color:#edf5e9; }
+    .project-card { background:white; border:1px solid var(--line); }
+    .project-card img { height:270px; width:100%; object-fit:cover; transition:transform .5s; }
+    .project-card:hover img { transform:scale(1.04); }
+    .project-card button { cursor:zoom-in; }
+    .form-panel { background:white; border:1px solid var(--line); }
+    input,select { width:100%; border:0; border-bottom:1px solid #b9c8ba; background:transparent; color:var(--forest); outline:0; font:14px 'Plus Jakarta Sans',sans-serif; }
+    input:focus,select:focus { border-color:var(--leaf); }
+    input::placeholder { color:#8a988d; }
+    .modal { display:none; position:fixed; inset:0; z-index:50; background:rgba(14,32,25,.82); padding:24px; }
+    .modal.open { display:grid; place-items:center; }
+    .modal img { max-height:78vh; max-width:90vw; object-fit:contain; }
+    .close-modal { position:absolute; top:22px; right:25px; border:1px solid #dcefd4; color:#dcefd4; background:transparent; padding:10px 14px; font:11px 'DM Mono',monospace; }
+    @media(max-width:767px) { .wrap{width:min(100% - 32px,560px)} .mobile-menu{display:none}.mobile-menu.open{display:flex}.hero-image{min-height:350px}.project-card img{height:220px} }
+    @media(min-width:768px) { .mobile-toggle{display:none} }
+  </style>
+</head>
+<body>
+  <header class="header sticky top-0 z-30">
+    <div class="wrap flex h-[78px] items-center justify-between gap-5">
+      <div class="flex items-center gap-5"><a class="logo" href="#home"><span class="logo-mark">T</span>Tamaki <span class="font-normal text-leaf">Landscaping</span></a><div class="text-right"><a class="mono block text-xs text-leaf" href="tel:+64226479021">022 647 9021</a><a class="mono hidden text-[10px] text-gray-600 md:block" href="mailto:Shayveetake2@gmail.com">Shayveetake2@gmail.com</a></div></div>
+      <button class="mobile-toggle rounded border border-forest/30 px-4 py-3 mono text-xs md:hidden" id="menuToggle" aria-label="Open menu" aria-expanded="false">MENU</button>
+      <nav class="mobile-menu absolute left-0 right-0 top-[78px] flex-col border-b border-stone bg-mist px-6 py-3 md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0" id="siteNav" aria-label="Main navigation"><a class="nav-link active py-3 md:py-0" href="#home">Home</a><a class="nav-link py-3 md:py-0" href="#services">Services</a><a class="nav-link py-3 md:py-0" href="#about">About us</a><a class="nav-link py-3 md:py-0" href="#gallery">Project gallery</a><a class="nav-link py-3 md:py-0" href="#contact">Contact</a><a class="nav-link py-3 md:py-0" href="projects.html">All demos</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home"><div class="wrap grid gap-12 py-16 md:py-24 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20"><div><p class="eyebrow mb-7 !text-[#b6d59f]">Central &amp; East Auckland · Since 2012</p><h1 class="hero-title serif">Transforming Auckland <em>outdoor spaces.</em></h1><p class="mt-8 max-w-xl text-lg leading-8 text-[#c6d8c2]">Premium landscape design, paving, and garden maintenance for spaces that feel considered, enduring and entirely yours.</p><div class="mt-10 flex flex-wrap gap-3"><a class="button" href="#contact">Book a site consultation <span class="text-lg">↗</span></a><a class="outline-button button" href="#gallery">View our work</a></div></div><div class="hero-image"><span class="hero-badge">AUCKLAND<br>OUTDOOR<br>LIVING</span></div></div></section>
+
+    <section class="wrap grid gap-3 py-14 md:grid-cols-3 md:py-20"><article class="feature-card p-6"><span class="eyebrow">01</span><h2 class="serif mt-12 text-2xl">Thoughtful planting</h2><p class="mt-3 text-sm leading-6 text-gray-600">Gardens that grow beautifully into their place, season after season.</p></article><article class="feature-card p-6"><span class="eyebrow">02</span><h2 class="serif mt-12 text-2xl">Quality materials</h2><p class="mt-3 text-sm leading-6 text-gray-600">Stone, timber and planting selected for lasting beauty and Auckland weather.</p></article><article class="feature-card p-6"><span class="eyebrow">03</span><h2 class="serif mt-12 text-2xl">Built around you</h2><p class="mt-3 text-sm leading-6 text-gray-600">A calm, collaborative process from the first site visit to the final detail.</p></article></section>
+
+    <section class="border-y border-stone py-20 md:py-28" id="services"><div class="wrap"><div class="mb-12 flex items-end justify-between gap-5"><div><p class="eyebrow mb-4">01 / What we do</p><h2 class="section-title serif">A better garden<br><em>starts with a plan.</em></h2></div><span class="mono text-xs text-gray-500">01 / 03</span></div><div class="grid gap-4 md:grid-cols-3"><article class="service-card p-7"><span class="eyebrow">01 / Structure</span><h3 class="serif mt-12 text-3xl">Decking &amp;<br>paving</h3><ul class="mt-8"><li>Outdoor entertaining areas</li><li>Natural stone paving</li><li>Timber and composite decks</li><li>Paths, steps and edging</li></ul></article><article class="service-card p-7"><span class="eyebrow">02 / Care</span><h3 class="serif mt-12 text-3xl">Garden<br>maintenance</h3><ul class="mt-8"><li>Seasonal garden care</li><li>Pruning and planting</li><li>Lawn care and tidy-ups</li><li>Ongoing maintenance plans</li></ul></article><article class="service-card p-7"><span class="eyebrow">03 / Vision</span><h3 class="serif mt-12 text-3xl">Custom landscape<br>design</h3><ul class="mt-8"><li>Site plans and planting design</li><li>Complete outdoor redesigns</li><li>Lighting and irrigation</li><li>Project planning and build</li></ul></article></div></div></section>
+
+    <section class="py-20 md:py-28" id="about"><div class="wrap about-block relative overflow-hidden p-8 md:p-16"><div class="relative z-10 grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-end"><div><p class="eyebrow mb-5 !text-[#b6d59f]">02 / About Tamaki</p><h2 class="section-title serif max-w-lg">Local knowledge.<br><em>Lasting craft.</em></h2></div><div class="max-w-lg text-[15px] leading-8 text-[#c6d8c2]"><p>For more than a decade, Tamaki Landscaping &amp; Design has been shaping outdoor spaces across Central and East Auckland.</p><p class="mt-5">We combine practical local knowledge with a considered design eye, working closely with homeowners to make gardens that are beautiful, useful and made to last.</p><p class="mt-5 text-[#b6d59f]">Good landscapes aren’t rushed. They’re grown.</p></div></div></div></section>
+
+    <section class="border-y border-stone py-20 md:py-28" id="gallery"><div class="wrap"><div class="mb-12 flex flex-wrap items-end justify-between gap-5"><div><p class="eyebrow mb-4">03 / Project gallery</p><h2 class="section-title serif">Outdoor spaces,<br><em>transformed.</em></h2></div><p class="max-w-xs text-sm leading-6 text-gray-600">A selection of landscape directions across Auckland. Tap any project to take a closer look.</p></div><div class="grid gap-4 md:grid-cols-2"><article class="project-card overflow-hidden"><button class="block w-full text-left" data-gallery="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1600&q=90" data-title="Grey Lynn courtyard"><img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=900&q=85" alt="Green planted courtyard with a timber deck"><div class="p-6"><span class="eyebrow">Courtyard · Grey Lynn</span><h3 class="serif mt-3 text-2xl">A softer city edge</h3></div></button></article><article class="project-card overflow-hidden"><button class="block w-full text-left" data-gallery="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1600&q=90" data-title="Remuera garden"><img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=900&q=85" alt="Layered garden planting with a stone path"><div class="p-6"><span class="eyebrow">Garden · Remuera</span><h3 class="serif mt-3 text-2xl">Layers of green</h3></div></button></article><article class="project-card overflow-hidden"><button class="block w-full text-left" data-gallery="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=90" data-title="Mission Bay entertaining area"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Modern outdoor entertaining area with paving"><div class="p-6"><span class="eyebrow">Paving · Mission Bay</span><h3 class="serif mt-3 text-2xl">Room for outside</h3></div></button></article><article class="project-card overflow-hidden"><button class="block w-full text-left" data-gallery="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1600&q=90" data-title="St Heliers planting plan"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=85" alt="Lush garden planting beside a home"><div class="p-6"><span class="eyebrow">Planting · St Heliers</span><h3 class="serif mt-3 text-2xl">A garden with rhythm</h3></div></button></article></div></div></section>
+
+    <section class="py-20 md:py-28" id="contact"><div class="wrap grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-24"><div><p class="eyebrow mb-5">04 / Start your project</p><h2 class="section-title serif">Let’s shape<br><em>your outside.</em></h2><p class="mt-7 max-w-md text-sm leading-7 text-gray-600">Tell us a little about the space you’re imagining and we’ll arrange a relaxed site consultation across Central or East Auckland.</p><div class="mt-10 space-y-4 text-sm leading-6 text-gray-600"><p><strong class="text-forest">09 555 0182</strong><br>hello@tamakilandscaping.co.nz</p><p><strong class="text-forest">Central &amp; East Auckland</strong><br>Remuera · Mission Bay · St Heliers · Grey Lynn</p></div></div><form class="form-panel grid gap-6 p-7 md:p-10" id="bookingForm"><label class="mono text-[10px] uppercase tracking-widest text-gray-500">Name<input class="mt-3 py-3" name="name" type="text" placeholder="Your name" required></label><label class="mono text-[10px] uppercase tracking-widest text-gray-500">Email<input class="mt-3 py-3" name="email" type="email" placeholder="you@example.com" required></label><label class="mono text-[10px] uppercase tracking-widest text-gray-500">Phone<input class="mt-3 py-3" name="phone" type="tel" placeholder="021 000 0000" required></label><label class="mono text-[10px] uppercase tracking-widest text-gray-500">Project type<select class="mt-3 py-3" name="project" required><option value="">Choose a project type</option><option>Decking</option><option>Lawn Care</option><option>Full Redesign</option></select></label><label class="mono text-[10px] uppercase tracking-widest text-gray-500">Preferred contact date<input class="mt-3 py-3" name="date" type="date" required></label><button class="button w-full" type="submit">Book a site consultation <span class="text-lg">↗</span></button><p class="mono min-h-4 text-xs text-leaf" id="formStatus" role="status"></p></form></div></section>
+  </main>
+
+  <footer class="border-t border-stone py-9"><div class="wrap flex flex-col gap-5 text-sm text-gray-600 md:flex-row md:items-center md:justify-between"><a class="logo" href="#home"><span class="logo-mark">T</span>Tamaki <span class="font-normal text-leaf">Landscaping</span></a><p>© 2026 Tamaki Landscaping &amp; Design · Central &amp; East Auckland</p><p class="mono text-xs">DESIGN · BUILD · MAINTAIN</p></div></footer>
+  <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Project image"><button class="close-modal" id="closeModal">CLOSE ×</button><div><img id="modalImage" src="" alt=""><p class="mt-4 text-center font-mono text-xs text-[#dcefd4]" id="modalTitle"></p></div></div>
+
+  <script>
+    const menuToggle = document.querySelector('#menuToggle');
+    const siteNav = document.querySelector('#siteNav');
+    menuToggle.addEventListener('click', () => { const open = siteNav.classList.toggle('open'); menuToggle.setAttribute('aria-expanded', String(open)); });
+    siteNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { siteNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
+    document.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener('click', (event) => { const target = document.querySelector(link.getAttribute('href')); if (!target) return; event.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }));
+    const modal = document.querySelector('#galleryModal');
+    const modalImage = document.querySelector('#modalImage');
+    const modalTitle = document.querySelector('#modalTitle');
+    document.querySelectorAll('[data-gallery]').forEach((button) => button.addEventListener('click', () => { modalImage.src = button.dataset.gallery; modalImage.alt = button.dataset.title; modalTitle.textContent = button.dataset.title; modal.classList.add('open'); }));
+    function closeModal() { modal.classList.remove('open'); modalImage.src = ''; }
+    document.querySelector('#closeModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
+    const form = document.querySelector('#bookingForm');
+    form.addEventListener('submit', (event) => { event.preventDefault(); const name = new FormData(form).get('name'); document.querySelector('#formStatus').textContent = `Thanks, ${name}. We’ll be in touch to confirm your consultation.`; form.reset(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16231f">
+  <meta name="description" content="Harbour &amp; Home Repairs - reliable local property maintenance in Auckland. Call, email, or connect online.">
+  <meta property="og:title" content="Harbour &amp; Home Repairs | Auckland">
+  <meta property="og:description" content="Reliable local property maintenance from Harbour &amp; Home Repairs in Auckland.">
+  <meta property="og:type" content="website">
+  <title>Harbour &amp; Home Repairs | Auckland</title>
+  <style>
+    :root {
+      --forest: #16231f;
+      --forest-light: #22372f;
+      --cream: #f3efe6;
+      --paper: #fffdf8;
+      --gold: #d9a441;
+      --gold-light: #f2cd78;
+      --muted: #69756f;
+      --line: #d9ded7;
+      --display: "Trebuchet MS", "Gill Sans", sans-serif;
+      --mono: "SFMono-Regular", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--forest); font-family: var(--display); }
+    a { color: inherit; }
+    .page { width: min(100% - 32px, 620px); margin: 0 auto; }
+    .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 0 32px; }
+    .topline, .footer-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .portfolio-link { color: var(--forest); font: 10px var(--mono); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; text-transform: uppercase; }
+    .top-contact { display: flex; align-items: center; gap: 14px; font: 10px var(--mono); }
+    .top-contact a { color: var(--forest); text-decoration-color: var(--gold); text-underline-offset: 4px; }
+    @media (max-width: 699px) { .top-contact .email { display: none; } }
+    .eyebrow { color: var(--gold); font: 10px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; }
+    .availability { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font: 10px var(--mono); text-transform: uppercase; }
+    .availability i { width: 7px; height: 7px; border-radius: 50%; background: #54a879; box-shadow: 0 0 0 5px rgba(84,168,121,.13); }
+    .hero-content { padding: 74px 0 65px; }
+    .monogram { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; background: var(--gold); color: var(--forest); font-size: 28px; font-weight: 700; letter-spacing: -2px; margin-bottom: 28px; }
+    h1 { max-width: 520px; margin: 0; font-size: clamp(3rem, 14vw, 5.8rem); line-height: .9; letter-spacing: -.07em; }
+    h1 em { color: var(--gold); font-family: Georgia, serif; font-weight: 400; letter-spacing: -.05em; }
+    .tagline { max-width: 410px; margin: 28px 0 0; color: var(--muted); font-size: 17px; line-height: 1.6; }
+    .actions { display: grid; gap: 10px; margin-top: 36px; }
+    .button { display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 14px 17px; border: 1px solid transparent; text-decoration: none; font: 11px var(--mono); letter-spacing: .3px; text-transform: uppercase; transition: transform .2s, background .2s, color .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--forest); color: var(--paper); }
+    .button-primary:hover { background: var(--forest-light); }
+    .button-secondary { border-color: var(--forest); color: var(--forest); }
+    .button-secondary:hover { background: var(--forest); color: var(--paper); }
+    .arrow { color: var(--gold); font-size: 18px; }
+    .scroll-cue { display: flex; align-items: center; gap: 12px; color: var(--muted); font: 10px var(--mono); text-transform: uppercase; }
+    .scroll-cue span { display: block; width: 42px; height: 1px; background: var(--gold); }
+    .section { padding: 62px 0; border-top: 1px solid var(--line); }
+    .section h2 { margin: 13px 0 27px; font-size: 31px; line-height: 1; letter-spacing: -.05em; }
+    .details { display: grid; gap: 0; background: var(--paper); border: 1px solid var(--line); }
+    .detail { display: grid; grid-template-columns: 92px 1fr; gap: 15px; padding: 18px; border-bottom: 1px solid var(--line); }
+    .detail:last-child { border-bottom: 0; }
+    .detail-label { color: var(--muted); font: 10px var(--mono); text-transform: uppercase; }
+    .detail-value { font-size: 14px; line-height: 1.5; }
+    .detail-value a { color: var(--forest); text-decoration-color: var(--gold); text-underline-offset: 4px; }
+    .socials { display: flex; flex-wrap: wrap; gap: 10px; }
+    .social { display: inline-flex; min-height: 44px; align-items: center; padding: 10px 14px; border: 1px solid var(--line); background: var(--paper); font: 10px var(--mono); text-decoration: none; text-transform: uppercase; }
+    .social:hover { border-color: var(--gold); }
+    .hours { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .hours-row { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .hours-row span:last-child { color: var(--muted); text-align: right; }
+    .note { margin: 20px 0 0; color: var(--muted); font: 11px/1.6 var(--mono); }
+    .footer { padding: 26px 0 34px; color: var(--muted); font: 10px var(--mono); }
+    .footer-line { align-items: flex-end; }
+    .footer a { text-decoration-color: var(--gold); text-underline-offset: 3px; }
+    @media (min-width: 700px) {
+      .page { width: min(100% - 64px, 1120px); }
+      .hero { min-height: 700px; padding-top: 38px; }
+      .hero-content { padding: 100px 0 90px; }
+      .actions { display: flex; max-width: 520px; }
+      .button { flex: 1; }
+      .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+      .section { padding: 90px 0; }
+      .section h2 { font-size: 42px; }
+      .details { max-width: 580px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero page">
+      <div class="topline"><span class="eyebrow">Auckland · Est. 2018</span><span class="top-contact"><a class="phone" href="tel:+64226479021">022 647 9021</a><a class="email" href="mailto:Shayveetake2@gmail.com">Shayveetake2@gmail.com</a></span><a class="portfolio-link" href="projects.html">← All demos</a><span class="availability"><i></i> Taking bookings</span></div>
+      <div class="hero-content">
+        <div class="monogram" aria-hidden="true">HH</div>
+        <p class="eyebrow">Your local specialist</p>
+        <h1>Harbour &amp; Home<br><em>Repairs.</em></h1>
+        <p class="tagline">Reliable, thoughtful property maintenance for Auckland homes and businesses. Quality work, clear communication, no fuss.</p>
+        <div class="actions">
+          <a class="button button-primary" href="tel:+6495550148">Call now <span class="arrow">↗</span></a>
+          <a class="button button-secondary" href="mailto:hello@harbourandhome.co.nz">Email us <span class="arrow">↗</span></a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#details"><span></span> More details</a>
+    </section>
+
+    <section class="section" id="details">
+      <div class="page info-grid">
+        <div>
+          <p class="eyebrow">01 / Contact</p>
+          <h2>Let’s talk<br>about your project.</h2>
+          <div class="details">
+              <div class="detail"><span class="detail-label">Phone</span><span class="detail-value"><a href="tel:+6495550148">09 555 0148</a></span></div>
+            <div class="detail"><span class="detail-label">Email</span><span class="detail-value"><a href="mailto:hello@harbourandhome.co.nz">hello@harbourandhome.co.nz</a></span></div>
+            <div class="detail"><span class="detail-label">Location</span><span class="detail-value">Auckland, New Zealand</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">02 / Connect</p>
+          <h2>Find us<br>online.</h2>
+          <div class="socials">
+            <a class="social" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <a class="social" href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook ↗</a>
+            <a class="social" href="https://www.google.com/maps/search/?api=1&query=Auckland+New+Zealand" target="_blank" rel="noreferrer">Google Maps ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="page info-grid">
+        <div>
+          <p class="eyebrow">03 / Hours</p>
+          <h2>When to<br><em>reach us.</em></h2>
+        </div>
+        <div>
+          <div class="hours">
+            <div class="hours-row"><span>Monday – Friday</span><span>8:00am – 5:00pm</span></div>
+            <div class="hours-row"><span>Saturday</span><span>9:00am – 1:00pm</span></div>
+            <div class="hours-row"><span>Sunday</span><span>By appointment</span></div>
+          </div>
+          <p class="note">For urgent enquiries, call the number above and leave a message if we miss you.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="page footer-line"><span>© 2026 Harbour &amp; Home Repairs</span><a href="#top">Back to top ↑</a></div></footer>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener('click', (event) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+  </script>
+</body>
+</html>
