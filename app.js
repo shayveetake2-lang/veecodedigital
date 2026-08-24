@@ -49,22 +49,3 @@ if (projectGrid && !document.querySelector('.project-business-card')) {
   });
 }
 
-const leadForm = document.querySelector('#leadForm');
-const formStatus = document.querySelector('#formStatus');
-if (leadForm) {
-  leadForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const formData = new FormData(leadForm);
-    const business = formData.get('business');
-    const subject = `New free concept enquiry from ${business}`;
-    const body = [
-      `Business name: ${business}`,
-      `Contact name: ${formData.get('name')}`,
-      `Email: ${formData.get('email')}`,
-      `Current website: ${formData.get('website') || 'Not provided'}`
-    ].join('\n');
-    formStatus.textContent = `Thanks, ${business}. Opening your email app to send the enquiry.`;
-    window.location.href = `mailto:Shayveetake2@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    leadForm.reset();
-  });
-}
