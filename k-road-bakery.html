@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3eadb">
+  <meta name="description" content="K-Road Artisan Bakery serving craft coffee and fresh sourdough on Karangahape Road, Auckland.">
+  <title>K-Road Artisan Bakery | Fresh Sourdough & Craft Coffee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { cream: '#f3eadb', espresso: '#32251f', terracotta: '#b86145', sage: '#7f9279' }, fontFamily: { display: ['DM Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'], mono: ['DM Mono', 'monospace'] } } } };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #f3eadb; --paper: #fbf7ef; --espresso: #32251f; --terracotta: #b86145; --line: #d8c8b4; --muted: #77675d; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--espresso); font-family: 'DM Sans', sans-serif; }
+    body:before { content: ''; position: fixed; inset: 0; pointer-events: none; opacity: .035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); z-index: 10; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .serif { font-family: 'Playfair Display', Georgia, serif; }
+    .mono { font-family: 'DM Mono', monospace; }
+    .eyebrow { color: var(--terracotta); font: 10px 'DM Mono', monospace; letter-spacing: 1.2px; text-transform: uppercase; }
+    .header { border-bottom: 1px solid var(--line); background: rgba(243,234,219,.93); backdrop-filter: blur(12px); }
+    .logo { color: var(--espresso); text-decoration: none; font: 600 20px 'Playfair Display', Georgia, serif; }
+    .logo span { color: var(--terracotta); font-style: italic; }
+    .nav-link { color: var(--espresso); font: 11px 'DM Mono', monospace; text-decoration: none; text-transform: uppercase; letter-spacing: .8px; }
+    .nav-link:hover, .nav-link.active { color: var(--terracotta); }
+    .hero { min-height: 650px; display: grid; align-items: center; background: var(--paper); }
+    .hero-title { font-size: clamp(3.2rem, 8vw, 7rem); line-height: .92; letter-spacing: -.055em; }
+    .hero-title em, .section-title em { color: var(--terracotta); font-style: italic; }
+    .hero-image { min-height: 440px; position: relative; overflow: hidden; background: #bf8b66; }
+    .hero-image:before { content: ''; position: absolute; inset: 0; background: linear-gradient(125deg, rgba(45,31,23,.1), rgba(45,31,23,.48)), radial-gradient(ellipse at 28% 28%, #ebc99e 0 14%, transparent 15%), radial-gradient(ellipse at 70% 54%, #735040 0 20%, transparent 21%), linear-gradient(145deg, #d89b68, #714b39 55%, #30231f); }
+    .hero-image:after { content: 'SLOW FERMENT · FRESH DAILY'; position: absolute; bottom: 24px; left: 24px; color: #f9edda; font: 10px 'DM Mono', monospace; letter-spacing: 1.1px; }
+    .hero-stamp { position: absolute; right: 24px; top: 24px; z-index: 1; display: grid; place-items: center; width: 105px; height: 105px; border: 1px solid #f8e8d0; border-radius: 50%; color: #f8e8d0; font: 10px/1.4 'DM Mono', monospace; text-align: center; transform: rotate(12deg); }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 48px; padding: 14px 20px; background: var(--terracotta); color: #fff8ee; font: 10px 'DM Mono', monospace; letter-spacing: .5px; text-decoration: none; text-transform: uppercase; transition: background .2s, transform .2s; }
+    .button:hover { background: #984731; transform: translateY(-2px); }
+    .outline-button { border: 1px solid var(--espresso); color: var(--espresso); background: transparent; }
+    .outline-button:hover { background: var(--espresso); color: var(--cream); }
+    .feature { border-top: 1px solid var(--line); }
+    .feature-card { border-bottom: 1px solid var(--line); }
+    .feature-card + .feature-card { border-left: 1px solid var(--line); }
+    .feature-icon { color: var(--terracotta); font-size: 26px; }
+    .section-title { font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: .98; letter-spacing: -.045em; }
+    .about-panel { background: #dfcfb8; }
+    .about-panel:before { content: '2018'; color: #c9b69c; font: 22vw/1 'Playfair Display', Georgia, serif; position: absolute; right: -10px; bottom: -30px; }
+    .hours-row { display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); padding: 13px 0; font-size: 14px; }
+    input, textarea { width: 100%; border: 0; border-bottom: 1px solid #bda991; background: transparent; color: var(--espresso); outline: 0; font: 15px 'DM Sans', sans-serif; }
+    input:focus, textarea:focus { border-color: var(--terracotta); }
+    textarea { min-height: 105px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #9c8c7c; }
+    .footer { border-top: 1px solid var(--line); }
+    @media (max-width: 767px) { .wrap { width: min(100% - 32px, 560px); } .mobile-menu { display: none; } .mobile-menu.open { display: flex; } .hero { min-height: 0; } .hero-image { min-height: 330px; } .feature-card + .feature-card { border-left: 0; } }
+    @media (min-width: 768px) { .mobile-toggle { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="header sticky top-0 z-20">
+    <div class="wrap flex h-[78px] items-center justify-between gap-6">
+      <div class="flex items-center gap-5"><a class="logo" href="#home">K-Road <span>Bakery</span></a><div class="text-right"><a class="mono block text-xs text-terracotta" href="tel:+64226479021">022 647 9021</a><a class="mono hidden text-[10px] text-[#77675d] md:block" href="mailto:Shayveetake2@gmail.com">Shayveetake2@gmail.com</a></div></div>
+      <button class="mobile-toggle rounded border border-espresso/30 px-4 py-3 mono text-xs md:hidden" id="menuToggle" aria-label="Open menu" aria-expanded="false">MENU</button>
+      <nav class="mobile-menu absolute left-0 right-0 top-[78px] flex-col border-b border-[#d8c8b4] bg-cream px-6 py-3 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0" id="siteNav" aria-label="Main navigation">
+        <a class="nav-link active py-3 md:py-0" href="#home" data-page="home">Home</a><a class="nav-link py-3 md:py-0" href="#about" data-page="about">About us</a><a class="nav-link py-3 md:py-0" href="#contact" data-page="contact">Contact &amp; hours</a><a class="nav-link py-3 md:py-0" href="projects.html">All demos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" data-section="home"><div class="wrap grid gap-12 py-16 md:py-24 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20"><div><p class="eyebrow mb-7">K Road · Auckland CBD</p><h1 class="hero-title serif max-w-2xl font-medium">Craft coffee &amp; fresh sourdough <em>on Karangahape Road.</em></h1><p class="mt-8 max-w-lg text-lg leading-8 text-[#77675d]">A neighbourhood bakery for slow mornings, good bread and the people who make K Road feel like home.</p><div class="mt-9 flex flex-wrap gap-3"><a class="button" href="#contact">View opening hours &amp; location <span>↗</span></a><a class="button outline-button" href="#about">Our story</a></div></div><div class="hero-image"><span class="hero-stamp">HANDMADE<br>IN<br>AUCKLAND</span></div></div></section>
+
+    <section class="feature" aria-label="Bakery highlights"><div class="wrap grid md:grid-cols-3"><article class="feature-card p-7 md:p-9"><span class="feature-icon">✳</span><h2 class="serif mt-12 text-2xl">Fresh daily</h2><p class="mt-3 text-sm leading-6 text-[#77675d]">Long-fermented loaves, flaky pastries and treats baked fresh every morning.</p></article><article class="feature-card p-7 md:p-9"><span class="feature-icon">◌</span><h2 class="serif mt-12 text-2xl">Organic ingredients</h2><p class="mt-3 text-sm leading-6 text-[#77675d]">Simple ingredients, thoughtfully sourced and nothing that doesn’t need to be there.</p></article><article class="feature-card p-7 md:p-9"><span class="feature-icon">⌁</span><h2 class="serif mt-12 text-2xl">Local roasters</h2><p class="mt-3 text-sm leading-6 text-[#77675d]">Espresso and filter coffee from independent Auckland roasters we love.</p></article></div></section>
+
+    <section class="wrap py-24 md:py-36" id="about" data-section="about"><div class="about-panel relative overflow-hidden p-8 md:p-16"><div class="relative z-10 grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-end"><div><p class="eyebrow mb-5">About us · Est. 2018</p><h2 class="section-title serif max-w-lg">Baked fresh in Auckland <em>since 2018.</em></h2></div><div class="max-w-lg text-[15px] leading-8 text-[#645348]"><p>We started with one sourdough starter, a borrowed mixer and a belief that a good bakery should feel like part of the neighbourhood.</p><p class="mt-5">Today, our tiny team still makes every loaf by hand, works with local growers and roasters, and keeps the coffee strong. Come in for a loaf, stay for a little while.</p></div></div></div></section>
+
+    <section class="border-t border-[#d8c8b4] py-24 md:py-32" id="contact" data-section="contact"><div class="wrap grid gap-14 lg:grid-cols-[.8fr_1.2fr] lg:gap-24"><div><p class="eyebrow mb-5">Contact &amp; hours</p><h2 class="section-title serif">Come find<br><em>your table.</em></h2><div class="mt-10 space-y-5 text-sm leading-6 text-[#77675d]"><p><strong class="text-espresso">184 Karangahape Road</strong><br>Auckland CBD, Aotearoa</p><p><strong class="text-espresso">09 309 1840</strong><br>hello@kroadbakery.co.nz</p></div><a class="mt-8 inline-block font-mono text-xs text-terracotta underline underline-offset-4" href="https://www.google.com/maps/search/?api=1&query=184+Karangahape+Road+Auckland" target="_blank" rel="noreferrer">Get directions on Google Maps ↗</a><div class="mt-12 max-w-sm"><p class="eyebrow mb-2">Opening hours</p><div class="hours-row"><span>Monday – Friday</span><strong>7:00am – 3:00pm</strong></div><div class="hours-row"><span>Saturday</span><strong>8:00am – 3:00pm</strong></div><div class="hours-row"><span>Sunday</span><strong>8:00am – 2:00pm</strong></div></div></div><form class="rounded-sm bg-[#dfcfb8] p-7 md:p-10" id="inquiryForm"><p class="serif text-3xl">Have a question?</p><p class="mt-2 text-sm text-[#77675d]">Send us a note and we’ll get back to you.</p><div class="mt-9 grid gap-6"><label class="mono text-[10px] uppercase tracking-widest text-[#77675d]">Name<input class="mt-3 py-3" name="name" type="text" placeholder="Your name" required></label><label class="mono text-[10px] uppercase tracking-widest text-[#77675d]">Email<input class="mt-3 py-3" name="email" type="email" placeholder="you@example.com" required></label><label class="mono text-[10px] uppercase tracking-widest text-[#77675d]">Message<textarea class="mt-3 py-3" name="message" placeholder="What can we help with?"></textarea></label><button class="button w-full" type="submit">Send inquiry <span>↗</span></button><p class="mono min-h-4 text-xs text-terracotta" id="formStatus" role="status"></p></div></form></div></section>
+  </main>
+
+  <footer class="footer py-9"><div class="wrap flex flex-col gap-5 text-sm text-[#77675d] md:flex-row md:items-center md:justify-between"><a class="logo" href="#home">K-Road <span>Bakery</span></a><p>© 2026 K-Road Artisan Bakery · Made with care on K Road.</p><p>Fresh bread, good coffee, local love.</p></div></footer>
+
+  <script>
+    const menuToggle = document.querySelector('#menuToggle');
+    const siteNav = document.querySelector('#siteNav');
+    menuToggle.addEventListener('click', () => { const isOpen = siteNav.classList.toggle('open'); menuToggle.setAttribute('aria-expanded', String(isOpen)); });
+    document.querySelectorAll('[data-page]').forEach((link) => link.addEventListener('click', () => { siteNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
+    document.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener('click', (event) => { const target = document.querySelector(link.getAttribute('href')); if (!target) return; event.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+    const form = document.querySelector('#inquiryForm');
+    form.addEventListener('submit', (event) => { event.preventDefault(); const name = new FormData(form).get('name'); document.querySelector('#formStatus').textContent = `Thanks, ${name}. We’ll get back to you soon.`; form.reset(); });
+  </script>
+</body>
+</html>
