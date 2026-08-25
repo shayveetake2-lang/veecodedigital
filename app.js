@@ -51,20 +51,48 @@ if (projectGrid && !document.querySelector('.project-business-card')) {
 
 const leadForm = document.querySelector('#leadForm');
 const formStatus = document.querySelector('#formStatus');
-if (leadForm) {
-  leadForm.addEventListener('submit', (event) => {
+if (leadForm && formStatus) {
+  leadForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const formData = new FormData(leadForm);
-    const business = formData.get('business');
-    const subject = `New free concept enquiry from ${business}`;
-    const body = [
-      `Business name: ${business}`,
-      `Contact name: ${formData.get('name')}`,
-      `Email: ${formData.get('email')}`,
-      `Current website: ${formData.get('website') || 'Not provided'}`
-    ].join('\n');
-    formStatus.textContent = `Thanks, ${business}. Opening your email app to send the enquiry.`;
-    window.location.href = `mailto:Shayveetake2@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    leadForm.reset();
+
+    if (!leadForm.reportValidity()) {
+      return;
+    }
+
+    const submitButton = leadForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.classList.add('opacity-75', 'cursor-not-allowed');
+    submitButton.innerHTML = 'Sending...';
+    formStatus.className = 'mt-4 hidden rounded-xl border border-slate-700 bg-slate-950/60 px-4 py-3 text-sm text-slate-200';
+    formStatus.textContent = '';
+
+    try {
+      const response = await fetch(leadForm.action, {
+        method: 'POST',
+        body: new FormData(leadForm),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || 'Unable to send your enquiry right now.');
+      }
+
+      formStatus.className = 'mt-4 block rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200';
+      formStatus.textContent = 'Thanks! Your enquiry has been sent successfully. We’ll get back to you soon.';
+      leadForm.reset();
+    } catch (error) {
+      formStatus.className = 'mt-4 block rounded-xl border border-rose-500/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-200';
+      formStatus.textContent = 'There was a problem sending your message. Please try again, or email us directly.';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
+      submitButton.innerHTML = originalButtonText;
+    }
   });
 }
+
