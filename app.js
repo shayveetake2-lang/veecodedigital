@@ -11,15 +11,6 @@ if (menuToggle && siteNav) {
   }));
 }
 
-const contactHeader = document.querySelector('.contact-page .site-header');
-const siteHeader = document.querySelector('.site-header');
-if (siteHeader && !siteHeader.querySelector('.header-contact')) {
-  const headerContact = document.createElement('div');
-  headerContact.className = 'header-contact';
-  headerContact.innerHTML = '<a href="tel:+64226479021">022 647 9021</a><a class="header-email" href="mailto:Shayveetake2@gmail.com">Shayveetake2@gmail.com</a>';
-  siteHeader.insertBefore(headerContact, siteHeader.querySelector('.menu-toggle'));
-}
-
 const entryPrice = document.querySelector('.entry-price');
 if (entryPrice) {
   entryPrice.querySelector('.price-top').innerHTML = '<span>01 / QUICK START</span><strong><del>$100</del> $50 <small>NZD SPECIAL</small></strong>';
