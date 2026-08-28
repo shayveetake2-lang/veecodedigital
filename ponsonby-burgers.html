@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="Ponsonby Burger Co. serving Auckland's finest smashed burgers, hand-cut fries, and thick shakes in the heart of Ponsonby.">
+  <title>Ponsonby Burger Co. | Smashed Burgers & Craft Shakes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#121212',
+            slate: '#1c1c1c',
+            amber: '#f59e0b',
+            amberbright: '#fbbf24',
+            cream: '#fafaf9',
+            muted: '#a8a29e'
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            mono: ['DM Mono', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --charcoal: #121212;
+      --slate: #1c1c1c;
+      --amber: #f59e0b;
+      --cream: #fafaf9;
+      --line: #2e2a24;
+      --muted: #a8a29e;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'Space Grotesk', sans-serif; }
+    body:before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      z-index: 10;
+    }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .serif { font-family: 'Playfair Display', Georgia, serif; }
+    .mono { font-family: 'DM Mono', monospace; }
+    .eyebrow { color: var(--amber); font: 10px 'DM Mono', monospace; letter-spacing: 1.5px; text-transform: uppercase; }
+    .header { border-bottom: 1px solid var(--line); background: rgba(18, 18, 18, 0.95); backdrop-filter: blur(12px); }
+    .logo { color: var(--cream); text-decoration: none; font: 700 20px 'Space Grotesk', sans-serif; letter-spacing: -0.5px; }
+    .logo span { color: var(--amber); }
+    .nav-link { color: var(--cream); font: 11px 'DM Mono', monospace; text-decoration: none; text-transform: uppercase; letter-spacing: .8px; }
+    .nav-link:hover, .nav-link.active { color: var(--amber); }
+    .hero { min-height: 600px; display: grid; align-items: center; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+    .hero:after {
+      content: '🍔';
+      position: absolute;
+      right: -30px;
+      bottom: -60px;
+      font-size: 340px;
+      line-height: 1;
+      opacity: 0.08;
+      transform: rotate(-15deg);
+      pointer-events: none;
+    }
+    .hero-title { font-size: clamp(3rem, 8vw, 6.5rem); line-height: .93; letter-spacing: -.06em; }
+    .hero-title em { color: var(--amber); font-style: normal; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 48px; padding: 14px 20px; background: var(--amber); color: var(--charcoal); font: 11px 'DM Mono', monospace; font-weight: 600; letter-spacing: .5px; text-decoration: none; text-transform: uppercase; transition: background .2s, transform .2s; }
+    .button:hover { background: #fbbf24; transform: translateY(-2px); }
+    .outline-button { border: 1px solid var(--amber); color: var(--amber); background: transparent; }
+    .outline-button:hover { background: var(--amber); color: var(--charcoal); }
+    .menu-section { border-top: 1px solid var(--line); }
+    .menu-item { border-bottom: 1px solid var(--line); padding: 20px 0; }
+    .menu-item-price { color: var(--amber); font: 16px 'DM Mono', monospace; font-weight: 500; }
+    .hours-row { display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); padding: 13px 0; font-size: 14px; }
+    input, textarea { width: 100%; border: 0; border-bottom: 1px solid #444; background: transparent; color: var(--cream); outline: 0; font: 15px 'Space Grotesk', sans-serif; }
+    input:focus, textarea:focus { border-color: var(--amber); }
+    textarea { min-height: 100px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #555; }
+    .footer { border-top: 1px solid var(--line); }
+    @media (max-width: 767px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .mobile-menu { display: none; }
+      .mobile-menu.open { display: flex; }
+      .hero { min-height: 0; }
+    }
+    @media (min-width: 768px) {
+      .mobile-toggle { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header sticky top-0 z-20">
+    <div class="wrap flex h-[78px] items-center justify-between gap-6">
+      <div class="flex items-center gap-5">
+        <a class="logo" href="#home">Ponsonby <span>Burger Co.</span></a>
+        <div class="text-right">
+          <a class="mono block text-xs text-amber" href="tel:+64226479021">022 647 9021</a>
+          <a class="mono hidden text-[10px] text-stone-500 md:block" href="mailto:Shayveetake2@gmail.com">Shayveetake2@gmail.com</a>
+        </div>
+      </div>
+      <button class="mobile-toggle rounded border border-amber/30 px-4 py-3 mono text-xs md:hidden" id="menuToggle" aria-label="Open menu" aria-expanded="false">MENU</button>
+      <nav class="mobile-menu absolute left-0 right-0 top-[78px] flex-col border-b border-[#2e2a24] bg-[#121212] px-6 py-3 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0" id="siteNav" aria-label="Main navigation">
+        <a class="nav-link active py-3 md:py-0" href="#home" data-page="home">Home</a>
+        <a class="nav-link py-3 md:py-0" href="#menu" data-page="menu">Menu</a>
+        <a class="nav-link py-3 md:py-0" href="#contact" data-page="contact">Hours &amp; Contact</a>
+        <a class="nav-link py-3 md:py-0" href="projects.html">All demos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home" data-section="home">
+      <div class="wrap grid gap-12 py-16 md:py-24 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
+        <div>
+          <p class="eyebrow mb-6">Ponsonby · Auckland</p>
+          <h1 class="hero-title font-bold">Smashed daily.<br><em>Served hot.</em></h1>
+          <p class="mt-8 max-w-lg text-lg leading-8 text-stone-400">Craft smashed beef burgers, hand-cut rosemary fries, and house-blended thick shakes. Made simple, made right.</p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a class="button" href="#menu">View menu <span>↗</span></a>
+            <a class="button outline-button" href="tel:+64226479021">Call to order</a>
+          </div>
+        </div>
+        <div class="relative hidden min-h-[350px] lg:block">
+          <div class="absolute inset-0 bg-slate rounded-3xl border border-stone-800 flex flex-col justify-between p-10 shadow-2xl">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="mono text-[10px] text-amber uppercase tracking-wider">LOCAL FAVOURITE</span>
+                <h3 class="serif text-3xl font-medium mt-1">Classic Smash</h3>
+              </div>
+              <strong class="mono text-2xl text-amber">$15.00</strong>
+            </div>
+            <p class="text-stone-400 text-sm leading-relaxed max-w-xs">Our signature single grass-fed beef smash patty, melted American cheddar, dill pickles, onions, and house burger sauce on a toasted bun.</p>
+            <div class="border-t border-stone-800 pt-4 flex justify-between items-center text-xs text-stone-500">
+              <span>NZ beef only</span>
+              <span>★★★★★ (280+ reviews)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section py-24 md:py-32" id="menu" data-section="menu">
+      <div class="wrap">
+        <p class="eyebrow mb-5">01 / Menu</p>
+        <h2 class="serif text-5xl font-medium mb-16">The Lineup</h2>
+
+        <div class="grid gap-16 lg:grid-cols-3">
+          <!-- Burgers -->
+          <div>
+            <h3 class="serif text-2xl border-b border-amber/30 pb-3 mb-6">Smashed Burgers</h3>
+            <div class="space-y-6">
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Classic Smash</h4>
+                  <span class="menu-item-price">$15.00</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Beef smash patty, cheddar, pickles, onions, house sauce.</p>
+              </div>
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Double Cheese</h4>
+                  <span class="menu-item-price">$19.00</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Double beef patty, double cheddar, mustard, burger sauce.</p>
+              </div>
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Truffle Mushroom</h4>
+                  <span class="menu-item-price">$22.00</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Double patty, Swiss cheese, wild mushrooms, truffle mayo.</p>
+              </div>
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Spicy Veggie Smash</h4>
+                  <span class="menu-item-price">$18.00</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">House veggie patty, pepper jack, jalapeños, spicy aioli.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sides -->
+          <div>
+            <h3 class="serif text-2xl border-b border-amber/30 pb-3 mb-6">Sides</h3>
+            <div class="space-y-6">
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Hand-Cut Fries</h4>
+                  <span class="menu-item-price">$6.00</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Seasoned with sea salt and rosemary.</p>
+              </div>
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Truffle Fries</h4>
+                  <span class="menu-item-price">$9.00</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Rosemary fries tossed in truffle oil and parmesan.</p>
+              </div>
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Onion Rings</h4>
+                  <span class="menu-item-price">$7.00</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Beer-battered, thick-cut, crispy onion rings.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shakes & Craft -->
+          <div>
+            <h3 class="serif text-2xl border-b border-amber/30 pb-3 mb-6">Shakes &amp; Craft</h3>
+            <div class="space-y-6">
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Salted Caramel Shake</h4>
+                  <span class="menu-item-price">$9.50</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Made with local organic caramel and real dairy cream.</p>
+              </div>
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Classic Chocolate</h4>
+                  <span class="menu-item-price">$8.50</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Double chocolate fudge thick shake.</p>
+              </div>
+              <div class="menu-item">
+                <div class="flex justify-between items-start gap-4">
+                  <h4 class="font-bold">Auckland Craft Beer</h4>
+                  <span class="menu-item-price">$11.00</span>
+                </div>
+                <p class="text-stone-400 text-sm mt-2">Rotating selection of local IPAs and lagers on tap.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hours & Contact Section -->
+    <section class="border-t border-stone-900 py-24 md:py-32" id="contact" data-section="contact">
+      <div class="wrap grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
+        <div>
+          <p class="eyebrow mb-5">Hours &amp; Location</p>
+          <h2 class="serif text-4xl font-medium mb-8">Ponsonby Road</h2>
+          <div class="space-y-6 text-sm leading-relaxed text-stone-400">
+            <p><strong class="text-cream">124 Ponsonby Road</strong><br>Ponsonby, Auckland 1011</p>
+            <p><strong class="text-cream">09 376 1240</strong><br>hello@ponsonbyburger.co.nz</p>
+          </div>
+          <a class="mt-8 inline-block font-mono text-xs text-amber underline underline-offset-4" href="https://www.google.com/maps/search/?api=1&query=124+Ponsonby+Road+Ponsonby+Auckland" target="_blank" rel="noreferrer">Get directions on Google Maps ↗</a>
+          
+          <div class="mt-12 max-w-sm">
+            <p class="eyebrow mb-2">Opening hours</p>
+            <div class="hours-row"><span>Mon – Thu</span><strong>11:30am – 9:30pm</strong></div>
+            <div class="hours-row"><span>Fri – Sat</span><strong>11:30am – 10:30pm</strong></div>
+            <div class="hours-row"><span>Sunday</span><strong>11:30am – 9:00pm</strong></div>
+          </div>
+        </div>
+
+        <form class="rounded-2xl bg-slate border border-stone-800 p-8 md:p-10" id="reservationForm">
+          <p class="serif text-3xl font-medium">Order Pick-Up</p>
+          <p class="mt-2 text-sm text-stone-400">Place an order for pick-up and we'll have it ready in 15 minutes.</p>
+          <div class="mt-9 grid gap-6">
+            <label class="mono text-[10px] uppercase tracking-widest text-stone-400">Name
+              <input class="mt-3 py-3" name="name" type="text" placeholder="Your name" required>
+            </label>
+            <label class="mono text-[10px] uppercase tracking-widest text-stone-400">Phone Number
+              <input class="mt-3 py-3" name="phone" type="tel" placeholder="02X XXX XXXX" required>
+            </label>
+            <label class="mono text-[10px] uppercase tracking-widest text-stone-400">Your Order Details
+              <textarea class="mt-3 py-3" name="order" placeholder="e.g. 1x Classic Smash, 1x Truffle Fries, 1x Chocolate Shake" required></textarea>
+            </label>
+            <button class="button w-full" type="submit">Place Order <span>↗</span></button>
+            <p class="mono min-h-4 text-xs text-amber" id="formStatus" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer py-10 bg-slate">
+    <div class="wrap flex flex-col gap-6 text-sm text-stone-500 md:flex-row md:items-center md:justify-between">
+      <a class="logo font-bold" href="#home">Ponsonby <span>Burger Co.</span></a>
+      <p>© 2026 Ponsonby Burger Co. · Crafted on Ponsonby Road.</p>
+      <p>Smashed fresh, local love.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('#menuToggle');
+    const siteNav = document.querySelector('#siteNav');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.querySelectorAll('[data-page]').forEach((link) => link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener('click', (event) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+    const form = document.querySelector('#reservationForm');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = new FormData(form).get('name');
+      document.querySelector('#formStatus').textContent = `Thanks, ${name}. We'll have your order ready for collection in 15 minutes!`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
+

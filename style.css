@@ -1048,6 +1048,11 @@ textarea {
   color: #20382e;
 }
 
+.project-burger .project-preview {
+  background: #f7e6d5;
+  color: #4a2e1b;
+}
+
 .preview-brand {
   position: relative;
   z-index: 2;
@@ -1133,6 +1138,29 @@ textarea {
   color: #d9a441;
   font: 38px var(--mono);
   box-shadow: 12px 12px 0 rgba(32, 56, 46, 0.16);
+}
+
+.preview-burger-mark {
+  position: absolute;
+  right: 18%;
+  bottom: 18%;
+  font-size: 80px;
+  line-height: 1;
+  transform: rotate(-10deg);
+}
+
+.preview-sale-tag {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  background: var(--orange);
+  color: #10171f;
+  font: 700 9px var(--mono);
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 3;
 }
 
 .project-info {

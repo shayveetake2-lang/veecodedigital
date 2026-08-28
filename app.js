@@ -11,13 +11,19 @@ if (menuToggle && siteNav) {
   }));
 }
 
-const entryPrice = document.querySelector('.entry-price');
-if (entryPrice) {
-  entryPrice.querySelector('.price-top').innerHTML = '<span>01 / QUICK START</span><strong><del>$100</del> $50 <small>NZD SPECIAL</small></strong>';
-  entryPrice.querySelector('h3').innerHTML = 'Digital<br><em>Business Card.</em>';
-  entryPrice.querySelector('.target').textContent = 'For small businesses that need a polished digital presence in one clear page.';
-  entryPrice.querySelector('ul').innerHTML = '<li>1 professionally designed webpage</li><li>Mobile-friendly digital profile</li><li>Clear contact details or CTA</li><li>Social links and business information</li><li>1 round of minor revisions</li>';
-}
+// Make pricing cards clickable to show their corresponding demo site
+document.querySelectorAll('.price-card').forEach((card) => {
+  const demoUrl = card.getAttribute('data-demo-url');
+  if (demoUrl) {
+    card.addEventListener('click', (event) => {
+      // Do not redirect if clicking the "Choose this package" CTA button or the "View demo" link directly
+      if (event.target.closest('.card-link') || event.target.closest('.demo-link')) {
+        return;
+      }
+      window.location.href = demoUrl;
+    });
+  }
+});
 
 const contactCopy = document.querySelector('.contact-copy');
 if (contactCopy && !contactCopy.querySelector('.direct-contact')) {
@@ -25,19 +31,6 @@ if (contactCopy && !contactCopy.querySelector('.direct-contact')) {
   directContact.className = 'direct-contact';
   directContact.innerHTML = '<span>Direct contact</span><a href="tel:+64226479021">022 647 9021</a><a href="mailto:Shayveetake2@gmail.com">Shayveetake2@gmail.com</a>';
   contactCopy.append(directContact);
-}
-
-const projectGrid = document.querySelector('.project-grid');
-if (projectGrid && !document.querySelector('.project-business-card')) {
-  const project = document.createElement('a');
-  project.className = 'project-card project-business-card';
-  project.href = 'digital-business-card.html';
-  project.innerHTML = '<div class="project-preview"><span class="preview-brand">HARBOUR &amp;<br><b>HOME REPAIRS</b></span><span class="preview-cta">VIEW DEMO ↗</span><div class="preview-card-mark">HH</div></div><div class="project-info"><div class="project-meta"><span class="kicker">04 / Quick start</span><strong><del>$100</del> $50 <small>NZD SALE</small></strong></div><h2>Harbour &amp; Home Repairs</h2><p>A polished one-page digital business card for a local property maintenance business, with contact details, social links and tap-to-call actions.</p><span class="project-tags">MOBILE-FIRST · CONTACT · QUICK START</span></div>';
-  projectGrid.prepend(project);
-  const projectLabels = ['01 / Quick start', '02 / Electrical', '03 / Hospitality', '04 / Outdoor design'];
-  projectGrid.querySelectorAll('.project-meta .kicker').forEach((label, index) => {
-    label.textContent = projectLabels[index];
-  });
 }
 
 const leadForm = document.querySelector('#leadForm');
@@ -86,4 +79,23 @@ if (leadForm && formStatus) {
     }
   });
 }
+
+// Pre-fill contact form package description based on query parameter
+const urlParams = new URLSearchParams(window.location.search);
+const selectedPackage = urlParams.get('package');
+if (selectedPackage && leadForm) {
+  const messageField = leadForm.querySelector('textarea[name="message"]');
+  if (messageField) {
+    const packagesMap = {
+      'quick-menu': 'Quick Menu ($25 NZD sale package)',
+      'digital-business-card': 'Digital Business Card ($50 NZD sale package)',
+      'landing-page': 'The Fast Landing Page ($200 NZD package)',
+      'essential-site': 'The Essential 3-Page Website ($350 NZD package)',
+      'complete-site': 'The Complete Starter Site ($500 NZD package)'
+    };
+    const packageName = packagesMap[selectedPackage] || selectedPackage;
+    messageField.value = `Hi! I'm interested in the "${packageName}". Let's get in touch.`;
+  }
+}
+
 
